@@ -33,7 +33,7 @@ export default {};
   position: absolute;
   left: 0;
   z-index: -1;
-  height: 100%;
+  height: calc(100vh - 100px);
   max-width: 100%;
 }
 
@@ -65,6 +65,10 @@ export default {};
 @media screen and (max-width: 768px) {
   .profile__text {
     width: 70%;
+  }
+
+  .corner__image {
+    display: none;
   }
 }
 </style>

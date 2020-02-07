@@ -19,16 +19,31 @@
       <a href>Projects</a>
       <a href>Contact</a>
       <a href>Skills</a>
+      <social-items id="socials" />
     </div>
   </nav>
 </template>
+
+<script>
+import SocialItems from "./SocialItems.vue";
+
+export default {
+  components: {
+    "social-items": SocialItems
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
-  position: relative;
+  padding: 1rem;
+  height: 100px;
+  background: transparent;
+  color: #2c3e50;
+  position: sticky;
+  top: 0;
 }
 
 .nav__header {
@@ -39,7 +54,7 @@
 .nav__title {
   display: inline-block;
   font-size: 22px;
-  color: white;
+  color: #2c3e50;
   padding: 10px;
 }
 
@@ -54,13 +69,18 @@
 
   a {
     display: inline-block;
+    margin: 0 15px;
     padding: 13px 10px;
     text-decoration: none;
-    color: #efefef;
+    color: #2c3e50;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.3);
     }
+  }
+
+  #socials {
+    display: none;
   }
 }
 
@@ -68,7 +88,11 @@
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 677px) {
+  .nav {
+    height: 50px;
+  }
+
   .nav__btn {
     display: inline-block;
     position: absolute;
@@ -85,9 +109,13 @@
         display: block;
         width: 25px;
         height: 10px;
-        border: 2px solid #eee;
+        border-top: 2px solid #eee;
       }
     }
+  }
+
+  .nav__title {
+    padding: 0;
   }
 
   .nav > .nav__btn > label:hover,
@@ -96,28 +124,44 @@
   }
 
   .nav__links {
-    position: absolute;
-    display: block;
+    visibility: hidden;
     width: 100%;
     background-color: #333;
     height: 0px;
     transition: all 0.3s ease-in;
     top: 50px;
     left: 0px;
+    position: absolute;
+    display: block;
 
     a {
       display: block;
       width: 100%;
+      margin: 0;
+      color: white;
+    }
+
+    #socials {
+      svg {
+        stroke: white !important;
+      }
     }
   }
 
-  .nav__check:not(:checked) ~ .nav__links {
+  #nav__check:not(:checked) ~ .nav__links {
     height: 0px;
   }
 
-  .nav__check:not(:checked) ~ .nav__links {
-    height: calc(100vh -50px);
+  #nav__check:checked ~ .nav__links {
+    height: calc(100vh - 50px);
     overflow-y: auto;
+    position: absolute;
+    visibility: visible;
+    z-index: 1;
+
+    #socials {
+      display: inline;
+    }
   }
 }
 </style>

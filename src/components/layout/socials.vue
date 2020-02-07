@@ -25,4 +25,10 @@ export default {
   border-radius: 40px;
   transition: box-shadow 1s ease-in-out;
 }
+
+@media (max-width: 677px) {
+  #socials {
+    display: none;
+  }
+}
 </style>
