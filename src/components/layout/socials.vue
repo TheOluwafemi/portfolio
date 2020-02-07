@@ -1,16 +1,28 @@
 <template>
   <ul id="socials">
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
+    <social-items />
   </ul>
 </template>
+
+<script>
+import SocialItems from "./SocialItems.vue";
+
+export default {
+  components: {
+    "social-items": SocialItems
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 #socials {
   position: fixed;
-  top: 60px;
-  right: 40px;
+  top: 40%;
+  right: 30px;
+  list-style-type: none;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 40px;
+  transition: box-shadow 1s ease-in-out;
 }
 </style>
