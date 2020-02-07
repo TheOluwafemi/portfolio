@@ -2,10 +2,11 @@
   <div id="app">
     <div id="profileLayout" v-if="displayProfileLayout">
       <profile-layout />
-      <router-view /> 
+      <socials />
+      <router-view />
     </div>
 
-    <router-view  v-else/>
+    <router-view v-else />
   </div>
 </template>
 
@@ -13,14 +14,14 @@
 export default {
   computed: {
     displayProfileLayout() {
-      return this.$route.meta.layout === 'profile-layout';
-    },
+      return this.$route.meta.layout === "profile-layout";
+    }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import './assets/styles/_main';
+@import "./assets/styles/_main";
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -30,13 +31,12 @@ export default {
   color: #2c3e50;
 }
 
-  // a {
-  //   font-weight: bold;
-  //   color: #2c3e50;
+// a {
+//   font-weight: bold;
+//   color: #2c3e50;
 
-  //   &.router-link-exact-active {
-  //     color: #42b983;
-  //   }
-  // }
-
+//   &.router-link-exact-active {
+//     color: #42b983;
+//   }
+// }
 </style>
