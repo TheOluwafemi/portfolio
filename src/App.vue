@@ -2,6 +2,7 @@
   <div id="app">
     <div id="profileLayout" v-if="displayProfileLayout">
       <profile-layout />
+      <navbar />
       <socials />
       <router-view />
     </div>
