@@ -2,7 +2,7 @@
   <div id="profile">
     <img class="profile__lower__layer" src="../assets/icons/Shape.svg" alt="grey colored shape" />
     <div class="profile__text">
-      <!-- <h1 class="profile__name text--left">Oluwafemi Emmanuel</h1> -->
+      <h1 class="profile__name text--left">Oluwafemi Emmanuel</h1>
       <p
         class="profile__statement text--left"
       >I help startups & businesses bring their products to life through effective user experience and visual design.I pinpoint UX problems and come up with solutions for mobile apps, websites and web apps. As a designer, I can optimize your current product and I am also ready to start working on your new project.</p>
