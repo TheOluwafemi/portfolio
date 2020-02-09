@@ -6,6 +6,14 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "portfolio",
+    component: () => import("../views/Portfolio.vue"),
+    meta: {
+      layout: 'profile-layout'
+    }
+  },
+  {
+    path: "/",
     name: "profile",
     component: () => import("../views/Profile.vue"),
     meta: {
