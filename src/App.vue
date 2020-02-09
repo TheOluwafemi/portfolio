@@ -1,14 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="profileLayout" v-if="displayProfileLayout">
+      <profile-layout />
+      <navbar />
+      <socials />
+      <router-view />
     </div>
-    <router-view />
+
+    <router-view v-else />
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    displayProfileLayout() {
+      return this.$route.meta.layout === "profile-layout";
+    }
+  }
+};
+</script>
+
 <style lang="scss">
+@import "./assets/styles/_main";
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,16 +32,12 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+// a {
+//   font-weight: bold;
+//   color: #2c3e50;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+//   &.router-link-exact-active {
+//     color: #42b983;
+//   }
+// }
 </style>
