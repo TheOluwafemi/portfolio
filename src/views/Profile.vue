@@ -67,6 +67,11 @@ export default {};
     width: 70%;
   }
 
+  .profile__name {
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+
   .corner__image {
     display: none;
   }
