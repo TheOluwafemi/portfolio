@@ -88,13 +88,14 @@ export default {};
   line-height: 2;
   display: flex;
   align-items: baseline;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .list__years {
   flex-wrap: wrap;
   width: 45px;
   color: #5371ff;
+  display: none;
 }
 
 .list__info {
