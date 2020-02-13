@@ -94,13 +94,13 @@
   text-align: left;
   margin-bottom: 2rem;
 
-  &::before {
-    content: "\00ba";
-    color: #5371ff;
-    float: left;
-    padding-top: 3px;
-    padding-right: 10px;
-  }
+  // &::before {
+  //   content: "\00ba";
+  //   color: #5371ff;
+  //   float: left;
+  //   padding-top: 3px;
+  //   padding-right: 10px;
+  // }
 }
 
 .footer {
@@ -113,6 +113,7 @@
   display: flex;
   flex-direction: column;
   flex: 0 21%;
+  text-align: left;
   margin-bottom: 2rem;
 }
 
