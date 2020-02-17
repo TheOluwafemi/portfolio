@@ -53,7 +53,7 @@ export default {
 
 .nav__title {
   display: inline-block;
-  font-size: 22px;
+  font-size: 20px;
   color: #2c3e50;
   padding: 10px;
 }
@@ -65,7 +65,6 @@ export default {
 .nav__links {
   //   display: inline;
   float: right;
-  font-size: 18px;
 
   a {
     display: inline-block;
