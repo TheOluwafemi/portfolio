@@ -21,7 +21,7 @@ export default {
   right: 30px;
   list-style-type: none;
   padding: 1rem;
-  background: #f9f9f9;
+  // background: #f9f9f9;
   border-radius: 40px;
   transition: box-shadow 1s ease-in-out;
 }
