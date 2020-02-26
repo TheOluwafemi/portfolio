@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav class="nav" ref="nav" :class="{ addBg: changeBg }">
     <input type="checkbox" class="nav__check" id="nav__check" />
     <div class="nav__header">
       <div class="nav__title">TheOluwafemi</div>
@@ -28,22 +28,54 @@
 import SocialItems from "./SocialItems.vue";
 
 export default {
+  data() {
+    return {
+      changeBg: false
+    };
+  },
   components: {
     "social-items": SocialItems
+  },
+  methods: {
+    handleScroll() {
+      let { nav } = this.$refs;
+      if (window.scrollY == 0) {
+        nav.classList.remove("addBg");
+        this.changeBg = false;
+      } else {
+        this.changeBg = true;
+      }
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>
 
 <style lang="scss" scoped>
+nav {
+  transition: all 0.2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+}
+
 .nav {
-  height: 50px;
   width: 100%;
   padding: 1rem;
-  height: 100px;
+  height: 60px;
   background: transparent;
   color: #2c3e50;
   position: sticky;
   top: 0;
+  z-index: 1000;
+}
+
+.addBg {
+  background: white !important;
+  padding: 0.5rem 1rem;
 }
 
 .nav__header {
