@@ -3,7 +3,7 @@
     <div id="profileLayout" v-if="displayProfileLayout">
       <profile-layout />
       <navbar />
-      <socials />
+      <social-items />
       <router-view />
     </div>
 
@@ -30,6 +30,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-size: 90%;
 }
 
 // a {
