@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul id="socials">
     <li>
       <a href="https://github.com/theoluwafemi">
         <svg
@@ -72,28 +72,46 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-li {
+#socials {
+  position: fixed;
+  top: 40%;
+  right: 14px;
   list-style-type: none;
-  margin: 1rem auto;
+  padding: 1rem;
+  z-index: 2;
+  border-radius: 40px;
+  transition: box-shadow 1s ease-in-out;
 
-  &:hover {
-    animation: move 0.7s linear;
-    cursor: pointer;
-  }
-
-  svg {
-    transition: stroke 1s linear;
+  li {
+    list-style-type: none;
+    margin: 1rem auto;
 
     &:hover {
-      stroke: #5371ff;
+      animation: move 0.7s linear;
+      cursor: pointer;
+    }
+
+    svg {
+      transition: stroke 1s linear;
+      width: 20px;
+
+      &:hover {
+        stroke: #5371ff;
+      }
+    }
+  }
+
+  @keyframes move {
+    from {
+      stroke-dashoffset: 15;
+      stroke-dasharray: 15;
     }
   }
 }
 
-@keyframes move {
-  from {
-    stroke-dashoffset: 15;
-    stroke-dasharray: 15;
+@media (max-width: 677px) {
+  #socials {
+    display: none;
   }
 }
 </style>

@@ -30,6 +30,7 @@ export default {};
 }
 
 .profile__lower__layer {
+  display: none;
   position: absolute;
   left: 0;
   z-index: -1;
@@ -38,6 +39,7 @@ export default {};
 }
 
 .corner__image {
+  display: none;
   max-height: 150px;
   max-width: 100%;
   position: absolute;

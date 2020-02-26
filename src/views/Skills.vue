@@ -115,6 +115,7 @@
   flex: 0 21%;
   text-align: left;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
