@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import gsap from 'gsap';
 
 import ProfileLayout from './components/layout/ProfileLayout';
 import SocialItems from './components/layout/SocialItems';
@@ -12,6 +13,8 @@ Vue.component("profile-layout", ProfileLayout);
 Vue.component("social-items", SocialItems);
 Vue.component('scroll-indicator', ScrollIndicator);
 Vue.component('navbar', Navbar);
+
+Vue.use(gsap)
 
 Vue.config.productionTip = false;
 
