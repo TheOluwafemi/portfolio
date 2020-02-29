@@ -29,6 +29,7 @@ export default {
     getCursor(e) {
       let mouseCursor = document.querySelector(".cursor");
       let allLinks = document.querySelectorAll("a");
+      let bars = document.querySelectorAll(".bar");
 
       mouseCursor.style.top = e.pageY + "px";
       mouseCursor.style.left = e.pageX + "px";
@@ -41,6 +42,15 @@ export default {
         link.addEventListener("mouseover", () => {
           mouseCursor.classList.add("link-grow");
           link.classList.add("hovered-link");
+        });
+      });
+
+      bars.forEach(bar => {
+        bar.addEventListener("mouseleave", () => {
+          mouseCursor.classList.remove("link-grow");
+        });
+        bar.addEventListener("mouseover", () => {
+          mouseCursor.classList.add("link-grow");
         });
       });
     }

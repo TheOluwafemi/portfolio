@@ -113,6 +113,7 @@ nav {
 }
 
 .nav__btn {
+  cursor: pointer;
   label {
     height: 50px;
 

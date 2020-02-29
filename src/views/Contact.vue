@@ -5,16 +5,16 @@
 
       <div class="socials">
         <a href>
-          <span>twitter</span>
+          <small>twitter</small>
         </a>
         <a href>
-          <span>github</span>
+          <small>github</small>
         </a>
         <a href>
-          <span>linkedin</span>
+          <small>linkedin</small>
         </a>
         <a href>
-          <span>instagram</span>
+          <small>instagram</small>
         </a>
       </div>
     </div>
