@@ -47,10 +47,10 @@
 
 .slide {
   margin-top: 7rem;
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
 
   img {
-    height: 450px;
+    // height: 450px;
     width: 100%;
   }
 }
