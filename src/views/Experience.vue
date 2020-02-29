@@ -44,6 +44,7 @@ export default {};
 
 <style lang="scss" scoped>
 @import "../assets/styles/_mixins";
+
 #experience {
   @include flex-column-center;
   padding: 0 5%;

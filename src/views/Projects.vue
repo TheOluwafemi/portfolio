@@ -1,74 +1,77 @@
 <template>
   <div id="projects">
-    <h1>Some of my works</h1>
+    <h1 class="title">Some of my works</h1>
 
-    <div class="sliders">
-      <div class="slide">
-        <div class="slide__info">
-          hello there
-          <br />welcome
-          <br />welcome
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide__info">
-          hello there
-          <br />welcome
-          <br />welcome
-        </div>
+    <div class="slide">
+      <img src="../assets/screen.png" alt="screen" />
+      <div class="details">
+        <h2 class="details__title">Linear Mixr</h2>
+        <p
+          class="details__desc"
+        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur nulla beatae amet reiciendis corporis repellat dolorum minus ad dolore eos ipsam nobis</p>
+        <small class="details__tool">Vue</small>
       </div>
     </div>
+
+    <div class="slide"></div>
   </div>
+  <!-- </div> -->
 </template>
 
 <style lang="scss" scoped>
 @import "../assets/styles/_mixins";
+@import "../assets/styles/_variables";
 
 #projects {
-  @include flex-column-center;
+  @include flex-column-center-auto;
   background: #f9f9f9;
   color: #2c3e50;
   padding: 5%;
   justify-content: flex-start;
+  color: $light-text-color;
+  background: $dark-bg-color;
 }
 
-.sliders {
-  height: 90%;
-  width: 95%;
-  overflow-x: scroll;
-  display: flex;
-  align-items: center;
-}
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.2s ease-in-out;
 
-.slide {
-  border: 20px solid white;
-  height: 90%;
-  flex: 0 0 60%;
-  margin-right: 4rem;
-  background-image: url("../assets/screen.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-
-  &:hover .slide__info {
-    height: 90px;
-    padding-top: 10px;
+  &:hover {
+    -webkit-text-fill-color: #16a085;
+    -webkit-text-stroke: 0px transparent;
   }
 }
 
-.slide__info {
-  width: 100%;
-  height: 0px;
-  overflow: hidden;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  position: absolute;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #fff;
+.slide {
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+
+  img {
+    height: 450px;
+    width: 100%;
+  }
+}
+
+.details {
+  text-align: left;
+  margin-top: 0.5rem;
+  line-height: 2;
+
+  &__tool {
+    color: #16a085;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .slide {
+    img {
+      height: 250px;
+      width: 100%;
+    }
+  }
 }
 </style>
 
