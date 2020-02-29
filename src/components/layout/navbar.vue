@@ -58,10 +58,6 @@ export default {
 
     toggleMenu() {
       this.menuIsOpen = !this.menuIsOpen;
-    },
-
-    thr() {
-      console.log(this.menuIsOpen);
     }
   },
   created() {
