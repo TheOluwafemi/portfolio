@@ -27,7 +27,7 @@
       <a href>Projects</a>
       <a href>Contact</a>
       <a href>Skills</a>
-      <social-items id="socials" />
+      <social-items />
     </div>
   </nav>
 </template>

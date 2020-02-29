@@ -3,7 +3,7 @@
     <scroll-indicator />
     <div class="underlay">
       <div class="img-container">
-        <img ref="img" v-bind:src="imgSrc" />
+        <img ref="img" v-bind:src="imgSrc" alt="oluwafemi damilola's picture" />
       </div>
     </div>
     <div class="content">
@@ -11,12 +11,12 @@
       <div class="profile__text">
         <h1 class="profile__name text--left">
           Hi, I'm
-          <a
+          <span
             href="#"
-            @mouseover="setImage('screen', $event.target)"
+            @mouseover="setImage('dami', $event.target)"
             @mouseleave="removeImage()"
-            class="emmanuel"
-          >Emmanuel</a>.
+            class="name"
+          >Emmanuel</span>.
           A frontend developer based in Lagos, currently working at Sterling.
         </h1>
         <h3
@@ -67,7 +67,7 @@ export default {
       }
 
       this.hovering = true;
-      $("a").css("opacity", 0.06);
+      $(".name").css("opacity", 0.06);
       eventTarget.style.opacity = 0.9;
       eventTarget.style.color = "white";
 
@@ -75,10 +75,10 @@ export default {
         if (!this.hovering) {
           return;
         }
-        let imgFormat = format || "png";
+        let imgFormat = format || "jpg";
         this.imgSrc = require(`@/assets/images/${imageName}.${imgFormat}`);
         new TimelineLite().to("img", 0.6, {
-          opacity: 1,
+          opacity: 0.4,
           ease: Power2.easeIn
         });
       }, 250);
@@ -119,6 +119,7 @@ export default {
   height: 100%;
   justify-content: center;
   align-items: center;
+
   .img-container {
     width: 50%;
     height: 50%;
@@ -127,7 +128,8 @@ export default {
     img {
       width: 100%;
       height: 100%;
-      object-position: center;
+      // object-position: center;
+      object-position: 0 20%;
       object-fit: cover;
       opacity: 0;
     }
@@ -165,6 +167,27 @@ export default {
 .profile__name {
   line-height: 1.7;
   position: relative;
+
+  .name {
+    position: relative;
+    transition: all 1s ease-in-out;
+
+    &::before {
+      content: "";
+      border-bottom: 8px solid #16a085;
+      border-radius: 1px;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 60%;
+      transition: width 1s ease;
+      z-index: -1;
+    }
+  }
+
+  .name:hover::before {
+    width: 0;
+  }
 }
 
 @keyframes colorMe {
