@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <div class="content">
-      <h1>get in touch</h1>
+      <h1 class="title">get in touch</h1>
 
       <div class="socials">
         <a href>
@@ -49,6 +49,10 @@ a {
 @media screen and (max-width: 425px) {
   .contact {
     height: auto;
+  }
+
+  .title {
+    margin-top: 2rem;
   }
 
   .socials {
