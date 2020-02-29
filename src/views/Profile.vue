@@ -1,30 +1,50 @@
 <template>
   <div id="profile">
-    <img class="profile__lower__layer" src="../assets/icons/Shape.svg" alt="grey colored shape" />
-    <div class="profile__text">
-      <h1 class="profile__name text--left">Oluwafemi Emmanuel</h1>
-      <p
-        class="profile__statement text--left"
-      >I help startups & businesses bring their products to life through effective user experience and visual design.I pinpoint UX problems and come up with solutions for mobile apps, websites and web apps. As a designer, I can optimize your current product and I am also ready to start working on your new project.</p>
-    </div>
-    <div class="corner">
-      <img
-        class="corner__image"
-        src="../assets/icons/side-triangle.svg"
-        alt="bottom right corner design"
-      />
+    <scroll-indicator />
+    <div class="content">
+      <img class="profile__lower__layer" src="../assets/icons/Shape.svg" alt="grey colored shape" />
+      <div class="profile__text">
+        <h1 class="profile__name text--left">
+          Hi, I'm
+          <span class="emmanuel">Emmanuel</span>. A frontend developer based in Lagos, currently working at Sterling.
+        </h1>
+        <h3
+          class="profile__statement text--left"
+        >I help startups & businesses bring their products to life through effective user experience and visual design.</h3>
+      </div>
+      <div class="corner">
+        <img
+          class="corner__image"
+          src="../assets/icons/side-triangle.svg"
+          alt="bottom right corner design"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      app: ""
+    };
+  },
+  mounted() {},
+  methods: {}
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/styles/_mixins";
+@import "../assets/styles/_variables";
 
 #profile {
+  color: $light-text-color;
+  background: $dark-bg-color;
+}
+
+.content {
   @include flex-column-center;
   padding: auto 20%;
 }
@@ -53,15 +73,35 @@ export default {};
 }
 
 .profile__name {
-  line-height: 3;
+  line-height: 1.7;
+  position: relative;
+}
+
+@keyframes colorMe {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: black;
+  }
 }
 
 .profile__statement {
   line-height: 1.5;
+  color: #16a085;
 }
 
 .text--left {
   text-align: left;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: #00ff00;
+  border-radius: 20px;
+  z-index: 2;
 }
 
 @media screen and (max-width: 768px) {

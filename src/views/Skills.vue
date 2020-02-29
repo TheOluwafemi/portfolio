@@ -64,11 +64,14 @@
 
 <style lang="scss" scoped>
 @import "../assets/styles/_mixins";
+@import "../assets/styles/_variables";
 
 #skills {
   @include flex-column-center;
   justify-content: flex-end;
   width: 100%;
+  color: $light-text-color;
+  background: $dark-bg-color;
 }
 
 .body {
@@ -107,6 +110,7 @@
   width: 100%;
   background: #f9f9f9;
   padding: 1% 5%;
+  color: $dark-text-color;
 }
 
 .list__item2 {
