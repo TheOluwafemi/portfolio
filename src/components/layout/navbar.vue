@@ -1,16 +1,24 @@
 <template>
-  <nav class="nav">
-    <input type="checkbox" class="nav__check" id="nav__check" />
-    <div class="nav__header">
-      <div class="nav__title">TheOluwafemi</div>
-    </div>
+  <nav class="nav" ref="nav" :class="{ addBg: menuIsOpen }">
+    <input
+      type="checkbox"
+      :value="menuIsOpen"
+      @click="toggleMenu"
+      class="nav__check"
+      id="nav__check"
+    />
 
-    <div class="nav__btn">
-      <label for="nav__check">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+    <div class="upper">
+      <div class="nav__header">
+        <div class="nav__title">TheO</div>
+      </div>
+
+      <div class="nav__btn" :class="{ menuicon: menuIsOpen }">
+        <label for="nav__check">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+        </label>
+      </div>
     </div>
 
     <div class="nav__links">
@@ -28,140 +36,172 @@
 import SocialItems from "./SocialItems.vue";
 
 export default {
+  data() {
+    return {
+      changeBg: false,
+      menuIsOpen: false
+    };
+  },
   components: {
     "social-items": SocialItems
+  },
+  methods: {
+    handleScroll() {
+      let { nav } = this.$refs;
+      if (window.scrollY == 0) {
+        nav.classList.remove("addBg");
+        this.changeBg = false;
+      } else {
+        this.changeBg = true;
+      }
+    },
+
+    toggleMenu() {
+      this.menuIsOpen = !this.menuIsOpen;
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.nav {
-  height: 50px;
-  width: 100%;
-  padding: 1rem;
-  height: 100px;
+@import "../../assets/styles/_variables";
+
+nav {
+  transition: all 0.2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  color: $light-text-color;
   background: transparent;
-  color: #2c3e50;
-  position: sticky;
+  font-size: 100%;
+  width: 100%;
+  padding: 3rem 2rem;
+  position: fixed;
   top: 0;
+  z-index: 1000;
+
+  a {
+    color: $light-text-color;
+    text-decoration: none;
+  }
+}
+
+.addBg {
+  background: #0b0f1df7 !important;
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav__header {
-  //   display: inline;
   float: left;
 }
 
 .nav__title {
-  display: inline-block;
-  font-size: 22px;
-  color: #2c3e50;
-  padding: 10px;
-}
-
-.nav__btn {
-  display: none;
-}
-
-.nav__links {
-  //   display: inline;
-  float: right;
-  font-size: 18px;
-
-  a {
-    display: inline-block;
-    margin: 0 15px;
-    padding: 13px 10px;
-    text-decoration: none;
-    color: #2c3e50;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  #socials {
-    display: none;
-  }
+  font-size: 20px;
 }
 
 .nav__check {
   display: none;
 }
 
-@media (max-width: 677px) {
-  .nav {
+.nav__btn {
+  label {
     height: 50px;
-  }
 
-  .nav__btn {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-
-    label {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      padding: 13px;
-
-      span {
-        display: block;
-        width: 25px;
-        height: 10px;
-        border-top: 2px solid #eee;
-      }
-    }
-  }
-
-  .nav__title {
-    padding: 0;
-  }
-
-  .nav > .nav__btn > label:hover,
-  .nav #nav__check:checked ~ .nav__btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .nav__links {
-    visibility: hidden;
-    width: 100%;
-    background-color: #333;
-    height: 0px;
-    transition: all 0.3s ease-in;
-    top: 50px;
-    left: 0px;
-    position: absolute;
-    display: block;
-
-    a {
+    span {
       display: block;
-      width: 100%;
-      margin: 0;
-      color: white;
-    }
-
-    #socials {
-      svg {
-        stroke: white !important;
-      }
+      width: 20px;
+      height: 10px;
+      border-top: 2px solid #eee;
     }
   }
+}
 
-  #nav__check:not(:checked) ~ .nav__links {
-    height: 0px;
+.nav__title {
+  padding: 0;
+}
+
+.nav > .nav__btn > label:hover,
+.nav #nav__check:checked ~ .nav__btn > label {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav__links {
+  visibility: hidden;
+  width: 100%;
+  background-color: #0b0f1df7;
+  height: 0px;
+  transition: all 0.3s ease-in;
+  top: 50px;
+  left: 0px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    display: block;
+    width: 100%;
+    margin: 0;
+    font-weight: 600;
+    font-size: 30px;
   }
+}
 
-  #nav__check:checked ~ .nav__links {
-    height: calc(100vh - 50px);
-    overflow-y: auto;
-    position: absolute;
-    visibility: visible;
-    z-index: 1;
+#nav__check:not(:checked) ~ .nav__links {
+  height: 0px;
+}
 
-    #socials {
-      display: inline;
-    }
+#nav__check:checked ~ .nav__links {
+  height: 100vh;
+  top: 123px;
+  overflow-y: auto;
+  position: absolute;
+  visibility: visible;
+  z-index: 1;
+
+  #socials {
+    display: inline;
   }
+}
+
+/** MENU ICON ANIMATION */
+.menuicon .bar {
+  // width: 100%;
+  height: 2px;
+  display: block;
+  position: relative;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.menuicon .bar.bar1 {
+  -webkit-transform: translateY(0px) rotate(0deg);
+  transform: translateY(0px) rotate(0deg);
+}
+
+.menuicon .bar.bar2 {
+  -webkit-transform: translateY(6px) rotate(0deg);
+  transform: translateY(6px) rotate(0deg);
+}
+
+.bar {
+  transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0.1s;
+}
+.menuicon .bar.bar1 {
+  -webkit-transform: translateY(5px) rotate(45deg);
+  transform: translateY(5px) rotate(45deg);
+}
+.menuicon .bar.bar2 {
+  -webkit-transform: translateY(3px) rotate(-45deg);
+  transform: translateY(3px) rotate(-45deg);
 }
 </style>

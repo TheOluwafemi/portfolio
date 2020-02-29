@@ -64,11 +64,14 @@
 
 <style lang="scss" scoped>
 @import "../assets/styles/_mixins";
+@import "../assets/styles/_variables";
 
 #skills {
   @include flex-column-center;
   justify-content: flex-end;
   width: 100%;
+  color: $light-text-color;
+  background: $dark-bg-color;
 }
 
 .body {
@@ -94,26 +97,29 @@
   text-align: left;
   margin-bottom: 2rem;
 
-  &::before {
-    content: "\00ba";
-    color: #5371ff;
-    float: left;
-    padding-top: 3px;
-    padding-right: 10px;
-  }
+  // &::before {
+  //   content: "\00ba";
+  //   color: #5371ff;
+  //   float: left;
+  //   padding-top: 3px;
+  //   padding-right: 10px;
+  // }
 }
 
 .footer {
   width: 100%;
   background: #f9f9f9;
   padding: 1% 5%;
+  color: $dark-text-color;
 }
 
 .list__item2 {
   display: flex;
   flex-direction: column;
   flex: 0 21%;
+  text-align: left;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {

@@ -4,11 +4,13 @@ import router from "./router";
 import store from "./store";
 
 import ProfileLayout from './components/layout/ProfileLayout';
-import Socials from './components/layout/socials';
+import SocialItems from './components/layout/SocialItems';
 import Navbar from './components/layout/navbar'
+import ScrollIndicator from './components/layout/ScrollIndicator';
 
 Vue.component("profile-layout", ProfileLayout);
-Vue.component("socials", Socials);
+Vue.component("social-items", SocialItems);
+Vue.component('scroll-indicator', ScrollIndicator);
 Vue.component('navbar', Navbar);
 
 Vue.config.productionTip = false;
