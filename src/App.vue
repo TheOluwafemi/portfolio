@@ -24,9 +24,7 @@ export default {
   },
   created() {
     let resolved = this.$route.name;
-    console.log(resolved);
     if (resolved == "404") {
-      console.log(resolved);
       return;
     } else {
       window.addEventListener("mousemove", this.getCursor);
