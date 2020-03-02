@@ -1,7 +1,7 @@
 <template>
   <ul id="socials">
     <li>
-      <a href="https://github.com/theoluwafemi">
+      <a href="https://github.com/theoluwafemi" target="_blank" rel="noopener">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -22,7 +22,7 @@
     </li>
 
     <li>
-      <a href="https://www.linkedin.com/in/emmanuel-d-oluwafemi/">
+      <a href="https://www.linkedin.com/in/emmanuel-d-oluwafemi/" target="_blank" rel="noopener">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -43,7 +43,7 @@
     </li>
 
     <li>
-      <a href="https://twitter.com/the_Oluwafemi">
+      <a href="https://twitter.com/the_Oluwafemi" target="_blank" rel="noopener">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

@@ -1,19 +1,19 @@
 <template>
-  <div class="contact">
-    <div class="content">
+  <div class="contact" id="contacts">
+    <div class="content" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-in-out">
       <h1 class="title">get in touch</h1>
 
       <div class="socials">
-        <a href>
+        <a href="https://twitter.com/the_Oluwafemi" target="_blank" rel="noopener">
           <small>twitter</small>
         </a>
-        <a href>
+        <a href="https://github.com/TheOluwafemi" target="_blank" rel="noopener">
           <small>github</small>
         </a>
-        <a href>
+        <a href="https://www.linkedin.com/in/emmanuel-d-oluwafemi/" target="_blank" rel="noopener">
           <small>linkedin</small>
         </a>
-        <a href>
+        <a href="https://instagram.com/the.oluwafemi" target="_blank" rel="noopener">
           <small>instagram</small>
         </a>
       </div>
