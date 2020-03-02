@@ -9,6 +9,7 @@ import Navbar from './components/layout/navbar'
 import ScrollIndicator from './components/layout/ScrollIndicator';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import gsap from 'gsap';
 
 Vue.component("profile-layout", ProfileLayout);
 Vue.component("social-items", SocialItems);
@@ -16,6 +17,7 @@ Vue.component('scroll-indicator', ScrollIndicator);
 Vue.component('navbar', Navbar);
 
 Vue.config.productionTip = false;
+Vue.use(gsap);
 
 new Vue({
   created() {
