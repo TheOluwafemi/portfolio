@@ -6,8 +6,7 @@
         <img ref="img" v-bind:src="imgSrc" alt="oluwafemi damilola's picture" />
       </div>
     </div>
-    <div class="content">
-      <img class="profile__lower__layer" src="../assets/icons/Shape.svg" alt="grey colored shape" />
+    <div class="content" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-in-out">
       <div class="profile__text">
         <h1 class="profile__name text--left">
           Hi, I'm
@@ -22,13 +21,6 @@
         <h3
           class="profile__statement text--left"
         >I help startups & businesses bring their products to life through effective user experience and visual design.</h3>
-      </div>
-      <div class="corner">
-        <img
-          class="corner__image"
-          src="../assets/icons/side-triangle.svg"
-          alt="bottom right corner design"
-        />
       </div>
     </div>
   </div>
@@ -121,17 +113,18 @@ export default {
   align-items: center;
 
   .img-container {
-    width: 50%;
-    height: 50%;
+    width: 35%;
+    height: 60%;
     background: transparent;
 
     img {
       width: 100%;
       height: 100%;
-      // object-position: center;
-      object-position: 0 20%;
+      object-position: center;
+      object-position: 0 15%;
       object-fit: cover;
       opacity: 0;
+      filter: grayscale(100%);
     }
   }
 }
@@ -139,24 +132,6 @@ export default {
 .content {
   @include flex-column-center;
   padding: auto 20%;
-}
-
-.profile__lower__layer {
-  display: none;
-  position: absolute;
-  left: 0;
-  z-index: -1;
-  height: calc(100vh - 100px);
-  max-width: 100%;
-}
-
-.corner__image {
-  display: none;
-  max-height: 150px;
-  max-width: 100%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 .profile__text {
@@ -219,16 +194,12 @@ export default {
 
 @media screen and (max-width: 768px) {
   .profile__text {
-    width: 70%;
+    width: 80%;
   }
 
   .profile__name {
     line-height: normal;
     margin-bottom: 1rem;
-  }
-
-  .corner__image {
-    display: none;
   }
 }
 </style>
