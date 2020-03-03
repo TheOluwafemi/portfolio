@@ -2,18 +2,23 @@
   <div id="projects">
     <h1 class="title">Some of my works</h1>
 
-    <div class="slide">
-      <img src="../assets/screen.png" alt="screen" />
+    <div class="slide" data-aos="fade-up" data-aos-easing="ease-in-out">
+      <a href="https://linear-mixr.netlify.com/" target="_blank" rel="noopener">
+        <img
+          src="https://res.cloudinary.com/dhnvd24pz/image/upload/v1583050624/screen.png"
+          alt="screen"
+        />
+      </a>
       <div class="details">
-        <h2 class="details__title">Linear Mixr</h2>
+        <h3 class="details__title">
+          <a href="https://linear-mixr.netlify.com/" target="_blank" rel="noopener">Linear Mixr</a>
+        </h3>
         <p
           class="details__desc"
         >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur nulla beatae amet reiciendis corporis repellat dolorum minus ad dolore eos ipsam nobis</p>
         <small class="details__tool">Vue</small>
       </div>
     </div>
-
-    <div class="slide"></div>
   </div>
   <!-- </div> -->
 </template>
@@ -30,11 +35,17 @@
   justify-content: flex-start;
   color: $light-text-color;
   background: $dark-bg-color;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0;
+  }
 }
 
 .title {
   text-align: center;
-  font-size: 40px;
+  // font-size: 40px;
   font-weight: 600;
   text-transform: capitalize;
   transition: all 0.2s ease-in-out;
@@ -47,10 +58,13 @@
 
 .slide {
   margin-top: 7rem;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   // margin-bottom: 5rem;
 
   img {
-    // height: 450px;
+    height: 100%;
     width: 100%;
   }
 }
@@ -58,7 +72,7 @@
 .details {
   text-align: left;
   margin-top: 0.5rem;
-  line-height: 2;
+  line-height: 1.5;
 
   &__tool {
     color: #16a085;

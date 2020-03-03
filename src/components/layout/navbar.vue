@@ -10,7 +10,7 @@
 
     <div class="upper">
       <div class="nav__header">
-        <div class="nav__title">TheO</div>
+        <div class="nav__title">E.O</div>
       </div>
 
       <div class="nav__btn" :class="{ menuicon: menuIsOpen }">
@@ -21,29 +21,40 @@
       </div>
     </div>
 
-    <div class="nav__links">
-      <a href="#">Profile</a>
-      <a href>Experiences</a>
-      <a href>Projects</a>
-      <a href>Contact</a>
-      <a href>Skills</a>
-      <social-items id="socials" />
+    <div class="nav__links" :class="{ opened: menuIsOpen }">
+      <label for="nav__check" v-for="page in pages" :key="page.id">
+        <a :href="page.id" @click="toggleMenu">{{ page.name }}</a>
+      </label>
     </div>
   </nav>
 </template>
 
 <script>
-import SocialItems from "./SocialItems.vue";
+// import SocialItems from "./SocialItems.vue";
 
 export default {
   data() {
     return {
       changeBg: false,
-      menuIsOpen: false
+      menuIsOpen: false,
+      pages: [
+        {
+          name: "Profile",
+          id: "#profile"
+        },
+        {
+          name: "Projects",
+          id: "#projects"
+        },
+        {
+          name: "Contacts",
+          id: "#contacts"
+        }
+      ]
     };
   },
   components: {
-    "social-items": SocialItems
+    // "social-items": SocialItems
   },
   methods: {
     handleScroll() {
@@ -106,6 +117,7 @@ nav {
 
 .nav__title {
   font-size: 20px;
+  font-weight: 600;
 }
 
 .nav__check {
@@ -113,6 +125,7 @@ nav {
 }
 
 .nav__btn {
+  cursor: pointer;
   label {
     height: 50px;
 
@@ -155,21 +168,20 @@ nav {
   }
 }
 
-#nav__check:not(:checked) ~ .nav__links {
-  height: 0px;
-}
+// #nav__check:not(:checked) ~ .nav__links {
+//   height: 0px;
+// }
 
-#nav__check:checked ~ .nav__links {
+// #nav__check:checked ~ .nav__links {
+// }
+
+.opened {
   height: 100vh;
   top: 123px;
   overflow-y: auto;
   position: absolute;
   visibility: visible;
   z-index: 1;
-
-  #socials {
-    display: inline;
-  }
 }
 
 /** MENU ICON ANIMATION */

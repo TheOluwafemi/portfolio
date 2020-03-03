@@ -8,7 +8,10 @@
       <router-view />
     </div>
 
-    <router-view v-else />
+    <div v-else>
+      <social-items />
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -20,7 +23,12 @@ export default {
     }
   },
   created() {
-    window.addEventListener("mousemove", this.getCursor);
+    let resolved = this.$route.name;
+    if (resolved == "404") {
+      return;
+    } else {
+      window.addEventListener("mousemove", this.getCursor);
+    }
   },
   destroyed() {
     window.removeEventListener("mousemove");
@@ -29,6 +37,7 @@ export default {
     getCursor(e) {
       let mouseCursor = document.querySelector(".cursor");
       let allLinks = document.querySelectorAll("a");
+      let bars = document.querySelectorAll(".bar");
 
       mouseCursor.style.top = e.pageY + "px";
       mouseCursor.style.left = e.pageX + "px";
@@ -41,6 +50,15 @@ export default {
         link.addEventListener("mouseover", () => {
           mouseCursor.classList.add("link-grow");
           link.classList.add("hovered-link");
+        });
+      });
+
+      bars.forEach(bar => {
+        bar.addEventListener("mouseleave", () => {
+          mouseCursor.classList.remove("link-grow");
+        });
+        bar.addEventListener("mouseover", () => {
+          mouseCursor.classList.add("link-grow");
         });
       });
     }
@@ -88,11 +106,11 @@ export default {
 
 a {
   padding: 1rem;
-  z-index: 2;
+  // z-index: 2;
   position: relative;
 
   &::before {
-    content: "";
+    content: none;
     position: absolute;
     width: 6%;
     margin-left: 47%;

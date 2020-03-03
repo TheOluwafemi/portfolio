@@ -1,24 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+const portfolio = () => import('../views/Portfolio.vue');
+const notFound = () => import('../views/404s.vue');
+
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
     name: "portfolio",
-    component: () => import("../views/Portfolio.vue"),
+    component: portfolio,
     meta: {
       layout: 'profile-layout'
     }
   },
   {
-    path: "/",
-    name: "profile",
-    component: () => import("../views/Profile.vue"),
-    meta: {
-      layout: 'profile-layout'
-    }
+    path: "*",
+    name: "404",
+    component: notFound
   },
   // {
   //   path: "/about",

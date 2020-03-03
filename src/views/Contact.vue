@@ -1,20 +1,20 @@
 <template>
-  <div class="contact">
-    <div class="content">
-      <h1>get in touch</h1>
+  <div class="contact" id="contacts">
+    <div class="content" data-aos="fade-up" data-aos-easing="ease-in-out">
+      <h1 class="title">get in touch</h1>
 
       <div class="socials">
-        <a href>
-          <span>twitter</span>
+        <a href="https://twitter.com/the_Oluwafemi" target="_blank" rel="noopener">
+          <small>twitter</small>
         </a>
-        <a href>
-          <span>github</span>
+        <a href="https://github.com/TheOluwafemi" target="_blank" rel="noopener">
+          <small>github</small>
         </a>
-        <a href>
-          <span>linkedin</span>
+        <a href="https://www.linkedin.com/in/emmanuel-d-oluwafemi/" target="_blank" rel="noopener">
+          <small>linkedin</small>
         </a>
-        <a href>
-          <span>instagram</span>
+        <a href="https://instagram.com/the.oluwafemi" target="_blank" rel="noopener">
+          <small>instagram</small>
         </a>
       </div>
     </div>
@@ -49,6 +49,10 @@ a {
 @media screen and (max-width: 425px) {
   .contact {
     height: auto;
+  }
+
+  .title {
+    margin-top: 2rem;
   }
 
   .socials {
