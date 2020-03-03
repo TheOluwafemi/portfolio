@@ -1,6 +1,6 @@
 <template>
   <div class="contact" id="contacts">
-    <div class="content" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-in-out">
+    <div class="content" data-aos="fade-up" data-aos-easing="ease-in-out">
       <h1 class="title">get in touch</h1>
 
       <div class="socials">

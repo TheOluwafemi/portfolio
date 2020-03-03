@@ -2,8 +2,8 @@
   <div id="projects">
     <h1 class="title">Some of my works</h1>
 
-    <div class="slide" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-in-out">
-      <a href="https://linear-mixr.netlify.com/" target="_blank">
+    <div class="slide" data-aos="fade-up" data-aos-easing="ease-in-out">
+      <a href="https://linear-mixr.netlify.com/" target="_blank" rel="noopener">
         <img
           src="https://res.cloudinary.com/dhnvd24pz/image/upload/v1583050624/screen.png"
           alt="screen"
@@ -11,7 +11,7 @@
       </a>
       <div class="details">
         <h3 class="details__title">
-          <a href="https://linear-mixr.netlify.com/" target="_blank">Linear Mixr</a>
+          <a href="https://linear-mixr.netlify.com/" target="_blank" rel="noopener">Linear Mixr</a>
         </h3>
         <p
           class="details__desc"

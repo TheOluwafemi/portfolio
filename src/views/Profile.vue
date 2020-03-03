@@ -6,7 +6,7 @@
         <img ref="img" v-bind:src="imgSrc" alt="oluwafemi damilola's picture" />
       </div>
     </div>
-    <div class="content" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-in-out">
+    <div class="content" data-aos="fade-up" data-aos-easing="ease-in-out">
       <div class="profile__text">
         <h1 class="profile__name text--left">
           Hi, I'm
@@ -113,7 +113,7 @@ export default {
   align-items: center;
 
   .img-container {
-    width: 35%;
+    width: 50%;
     height: 60%;
     background: transparent;
 
